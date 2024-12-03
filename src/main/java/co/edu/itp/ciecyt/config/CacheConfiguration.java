@@ -50,6 +50,13 @@ public class CacheConfiguration {
             createCache(cm, co.edu.itp.ciecyt.domain.User.class.getName());
             createCache(cm, co.edu.itp.ciecyt.domain.Authority.class.getName());
             createCache(cm, co.edu.itp.ciecyt.domain.User.class.getName() + ".authorities");
+            createCache(cm, co.edu.itp.ciecyt.domain.Elemento.class.getName());
+            createCache(cm, co.edu.itp.ciecyt.domain.Elemento.class.getName() + ".elementosProyectos");
+            createCache(cm, co.edu.itp.ciecyt.domain.ElementoProyecto.class.getName());
+            createCache(cm, co.edu.itp.ciecyt.domain.IntegrantesProyecto.class.getName());
+            createCache(cm, co.edu.itp.ciecyt.domain.Proyecto.class.getName());
+            createCache(cm, co.edu.itp.ciecyt.domain.Proyecto.class.getName() + ".elementos");
+            createCache(cm, co.edu.itp.ciecyt.domain.Proyecto.class.getName() + ".integrantes");
             // jhipster-needle-ehcache-add-entry
         };
     }

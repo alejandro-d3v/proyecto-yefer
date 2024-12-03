@@ -102,6 +102,12 @@ spring:
         - api-docs
         # Uncomment to activate TLS for the dev profile
         #- tls
+
+  servlet:
+    multipart:
+      max-file-size: 10MB # Tamaño máximo de un solo archivo
+      max-request-size: 10MB # Tamaño máximo de la solicitud completa
+
   jmx:
     enabled: false
   data:
@@ -206,7 +212,7 @@ jhipster:
     license: unlicensed
     license-url:
   security:
-    content-security-policy: "default-src 'self'; frame-src 'self' data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://storage.googleapis.com; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; img-src 'self' data:; font-src 'self' https://fonts.gstatic.com data:"
+    content-security-policy: "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tiny.cloud https://storage.googleapis.com;"
 # ===================================================================
 # Application specific properties
 # Add your own application properties here, see the ApplicationProperties class
@@ -217,3 +223,6 @@ jhipster:
 # ===================================================================
 
 # application:
+
+file:
+  upload-dir: C:\Users\loza\Documents\Funcionalidad_v2\Funcionalidad_itp\Uploads

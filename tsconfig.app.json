@@ -8,6 +8,7 @@
     "outDir": "target/out-tsc/dist",
     "paths": {
       "@/*": ["./*"]
-    }
+    },
+    "lib": ["dom", "esnext"] // Asegura que TypeScript reconozca las APIs del navegador como XMLHttpRequest
   }
 }

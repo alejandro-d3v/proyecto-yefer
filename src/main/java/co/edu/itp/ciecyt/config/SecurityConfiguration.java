@@ -62,6 +62,8 @@ public class SecurityConfiguration {
                 authz ->
                     // prettier-ignore
                 authz
+                    .requestMatchers(HttpMethod.POST, "/api/upload/image").permitAll()  // Permitir la carga de imágenes
+                    .requestMatchers(HttpMethod.GET, "/api/elemento-proyectos/Uploads/**").permitAll() // Permitir acceso público a las imágenes
                     .requestMatchers(mvc.pattern("/index.html"), mvc.pattern("/*.js"), mvc.pattern("/*.txt"), mvc.pattern("/*.json"), mvc.pattern("/*.map"), mvc.pattern("/*.css")).permitAll()
                     .requestMatchers(mvc.pattern("/*.ico"), mvc.pattern("/*.png"), mvc.pattern("/*.svg"), mvc.pattern("/*.webapp")).permitAll()
                     .requestMatchers(mvc.pattern("/assets/**")).permitAll()
