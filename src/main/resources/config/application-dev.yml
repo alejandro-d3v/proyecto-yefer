@@ -33,7 +33,7 @@ spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     url: jdbc:postgresql://localhost:5432/ciecyt_db_7
-    username: postgres
+    username: postgre
     password: asus2020
     hikari:
       poolName: Hikari
