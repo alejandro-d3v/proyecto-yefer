@@ -287,7 +287,7 @@ public class ElementoProyectoResource {
 
         try {
             // Create directory if it doesn't exist
-            File directory = new File(uploadDir);
+            File directory = new File(System.getProperty("user.dir") + "/Uploads");
             if (!directory.exists() && !directory.mkdirs()) {
                 throw new IOException("Failed to create upload directory");
             }

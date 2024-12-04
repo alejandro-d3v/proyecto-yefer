@@ -225,4 +225,4 @@ jhipster:
 # application:
 
 file:
-  upload-dir: C:\Users\loza\Documents\Funcionalidad_v2\Funcionalidad_itp\Uploads
+  upload-dir: ./Uploads
