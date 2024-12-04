@@ -63,25 +63,24 @@
               {{ t$('ciecytApp.elementoProyecto.elemento') }}
             </label>
 
-            <!-- <select
-              class="form-control"
+            <select
               id="elemento-proyecto-elemento"
+              class="form-control"
               data-cy="elemento"
               name="elemento"
               v-model="v$.form.elemento.$model"
             >
               <option v-bind:value="null"></option>
 
-              <option
-                v-for="elementoOption in elementos"
-                :key="elementoOption.id"
-                v-bind:value="
-                  v$.form.elemento.$model && elementoOption.id === elementoProyecto.elemento?.id
-                    ? v$.form.elemento.$model
-                    : elementoOption
-                "
-              >{{ elementoOption.id }}</option>
-            </select> -->
+              <template v-for="elementoOption in elementos" :key="elementoOption.id">
+                <option
+                  :value="elementoOption.id"
+                  :selected="elementoOption.id === elementoProyecto.elemento?.id"
+                >
+                  {{ elementoOption.elemento }}
+                </option>
+              </template>
+            </select>
           </div>
         </div>
 

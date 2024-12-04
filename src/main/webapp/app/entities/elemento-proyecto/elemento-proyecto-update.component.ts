@@ -39,8 +39,8 @@ export default defineComponent({
     const isSaving = ref(false);
 
     const form = reactive({
-      dato: 'test dato',
-      descripcion: 'test descripcion',
+      dato: '',
+      descripcion: '',
       elemento: null,
     });
     const v$ = useVuelidate({
@@ -70,6 +70,7 @@ export default defineComponent({
 
         form.dato = elementoProyecto.value.dato ?? '';
         form.descripcion = elementoProyecto.value.descripcion ?? '';
+        form.elemento = elementoProyecto.value.elemento?.id ?? null as any;
       } catch (error: any) {
         alertService.showHttpError(error.response);
       }
