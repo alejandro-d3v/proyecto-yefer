@@ -7,12 +7,6 @@
         </h2>
         <dl class="row jh-entity-details">
           <dt>
-            <span v-text="t$('ciecytApp.elementoProyecto.dato')"></span>
-          </dt>
-          <dd>
-            <span>{{ elementoProyecto.dato }}</span>
-          </dd>
-          <dt>
             <span v-text="t$('ciecytApp.elementoProyecto.descripcion')"></span>
           </dt>
           <dd>
@@ -27,6 +21,13 @@
                 elementoProyecto.elemento.id
               }}</router-link>
             </div>
+          </dd>
+
+          <dt>
+            <span>{{ t$('ciecytApp.elementoProyecto.dato') }}</span>
+          </dt>
+          <dd>
+            <span v-html="elementoProyecto.dato"></span>
           </dd>
         </dl>
         <button type="submit" v-on:click.prevent="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">

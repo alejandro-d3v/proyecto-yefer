@@ -1,6 +1,6 @@
 import { defineComponent, inject, onMounted, ref, type Ref, watch } from 'vue';
 import { useI18n } from 'vue-i18n';
-
+import DOMPurify from 'dompurify';
 import ElementoProyectoService from './elemento-proyecto.service';
 import { type IElementoProyecto } from '@/shared/model/elemento-proyecto.model';
 import useDataUtils from '@/shared/data/data-utils.service';
@@ -64,6 +64,10 @@ export default defineComponent({
     onMounted(async () => {
       await retrieveElementoProyectos();
     });
+
+    const sanitizeDato = (dato: string) => {
+      return DOMPurify.sanitize(dato ?? '');
+    };
 
     const removeId: Ref<number> = ref(null);
     const removeEntity = ref<any>(null);
@@ -132,6 +136,7 @@ export default defineComponent({
       changeOrder,
       t$,
       ...dataUtils,
+      sanitizeDato,
     };
   },
 });

@@ -1,6 +1,7 @@
 import { defineComponent, inject, ref, type Ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useRoute, useRouter } from 'vue-router';
+import DOMPurify from 'dompurify';
 
 import ElementoProyectoService from './elemento-proyecto.service';
 import useDataUtils from '@/shared/data/data-utils.service';
@@ -26,6 +27,7 @@ export default defineComponent({
       try {
         const res = await elementoProyectoService().find(elementoProyectoId);
         elementoProyecto.value = res;
+        elementoProyecto.value.dato = DOMPurify.sanitize(elementoProyecto.value.dato ?? '');
       } catch (error) {
         alertService.showHttpError(error.response);
       }

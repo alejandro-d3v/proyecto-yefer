@@ -54,7 +54,7 @@
                 elementoProyecto.id
               }}</router-link>
             </td>
-            <td>{{ elementoProyecto.dato }}</td>
+            <td v-html="sanitizeDato(elementoProyecto.dato ?? '')"></td>
             <td>{{ elementoProyecto.descripcion }}</td>
             <td>
               <div v-if="elementoProyecto.elemento">
